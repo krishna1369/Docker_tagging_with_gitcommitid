@@ -4,7 +4,7 @@ sudo rm -r gold ## these steps are not recommened instead you can modify script 
 sudo mkdir gold
 cd gold/
 sudo git clone https://github.com/krishna1369/Docker_tagging_with_gitcommitid.git
-cd Day9/Code
+cd Docker_tagging_with_gitcommitid/Code
 git_commit=$(sudo git rev-parse HEAD)
 sudo docker build -t react-microk8s:$git_commit -f golddockerfile .
 sudo docker tag react-microk8s:$git_commit krishna1369/react-microk8s:$git_commit
