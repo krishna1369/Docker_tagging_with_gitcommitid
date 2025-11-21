@@ -3,12 +3,12 @@ sudo docker rmi -f $(sudo docker images -q) ##this is not recommned step, i am d
 sudo rm -r gold ## these steps are not recommened instead you can modify script as shown below
 sudo mkdir gold
 cd gold/
-sudo git clone https://github.com/sagarkakkalasworld/Day9.git
+sudo git clone https://github.com/krishna1369/Docker_tagging_with_gitcommitid.git
 cd Day9/Code
 git_commit=$(sudo git rev-parse HEAD)
 sudo docker build -t react-microk8s:$git_commit -f golddockerfile .
-sudo docker tag react-microk8s:$git_commit sagarkakkalasworld/react-microk8s:$git_commit
-sudo docker push sagarkakkalasworld/react-microk8s:$git_commit
+sudo docker tag react-microk8s:$git_commit krishna1369/react-microk8s:$git_commit
+sudo docker push krishna1369/react-microk8s:$git_commit
 aws s3 rm s3://gitcommittagbucket/new_value.txt
 sudo touch new_value.txt
 sudo chmod 777 new_value.txt
