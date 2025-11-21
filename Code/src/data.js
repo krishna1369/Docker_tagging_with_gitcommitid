@@ -2,7 +2,7 @@ export const sliderItems = [
   {
     id: "1",
     img: "assets/braclet/main.jfif",
-    title: "Docker images has been tagged with Git commit IDs successfully",
+    title: "Docker images has been tagged with Git commit IDs successfully please check",
     desc: "This is now in new commit",
     bg: "green",
   },
