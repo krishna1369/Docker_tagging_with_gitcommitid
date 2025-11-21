@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Change build server IP acccording to your AWS EC2 Build server Private Ip
-        BUILD_SERVER_IP = '43.205.211.22'
+        BUILD_SERVER_IP = '13.204.84.24'
     }
 
     stages {
