@@ -9,7 +9,7 @@ git_commit=$(sudo git rev-parse HEAD)
 sudo docker build -t react-microk8s:$git_commit -f golddockerfile .
 sudo docker tag react-microk8s:$git_commit krishna1369/react-microk8s:$git_commit
 sudo docker push krishna1369/react-microk8s:$git_commit
-aws s3 rm s3://gitcommittagbucket/new_value.txt
+aws s3 rm s3://git-commit-tag-bucket/new_value.txt
 sudo touch new_value.txt
 sudo chmod 777 new_value.txt
 sudo echo $git_commit > new_value.txt
