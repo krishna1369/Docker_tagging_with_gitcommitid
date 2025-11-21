@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Change build server IP acccording to your AWS EC2 Build server Private Ip
-        BUILD_SERVER_IP = '172.31.4.138'
+        BUILD_SERVER_IP = '43.205.211.22'
     }
 
     stages {
@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Remove existing Day6 directory and clone the latest repo
-                    sh "ssh ubuntu@${BUILD_SERVER_IP} 'sudo rm -rf /home/ubuntu/Day* && git clone https://github.com/sagarkakkalasworld/Day9.git /home/ubuntu/Day9'"
+                    sh "ssh ubuntu@${BUILD_SERVER_IP} 'sudo rm -rf /home/ubuntu/Day* && git clone https://github.com/krishna1369/Docker_tagging_with_gitcommitid.git /home/ubuntu/Docker_tagging_with_gitcommitid'"
                 }
             }
         }
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Execute Ansible playbook on Build Server
-                    sh "ssh ubuntu@${BUILD_SERVER_IP} 'ansible-playbook /home/ubuntu/Day9/Ansible/build.yaml'"
+                    sh "ssh ubuntu@${BUILD_SERVER_IP} 'ansible-playbook /home/ubuntu/Docker_tagging_with_gitcommitid/Ansible/build.yaml'"
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Execute deployment playbook on Deploy Server
-                    sh "ssh ubuntu@${BUILD_SERVER_IP} 'ansible-playbook /home/ubuntu/Day9/Ansible/deploy.yaml'"
+                    sh "ssh ubuntu@${BUILD_SERVER_IP} 'ansible-playbook /home/ubuntu/Docker_tagging_with_gitcommitid/Ansible/deploy.yaml'"
                 }
             }
         }
