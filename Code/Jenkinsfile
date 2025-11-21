@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Remove existing Day6 directory and clone the latest repo
-                    sh "ssh ubuntu@${BUILD_SERVER_IP} 'sudo rm -rf /home/ubuntu/Day* && git clone https://github.com/krishna1369/Docker_tagging_with_gitcommitid.git /home/ubuntu/Docker_tagging_with_gitcommitid'"
+                    sh "ssh ubuntu@${BUILD_SERVER_IP} 'sudo rm -rf /home/ubuntu/Doc* && git clone https://github.com/krishna1369/Docker_tagging_with_gitcommitid.git /home/ubuntu/Docker_tagging_with_gitcommitid'"
                 }
             }
         }
