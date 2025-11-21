@@ -13,15 +13,15 @@
 
    - name: clone bash scripts repo into server
      ansible.builtin.shell:
-       cmd: sudo git clone https://github.com/sagarkakkalasworld/Day9.git
+       cmd: sudo git clone https://github.com/krishna1369/Docker_tagging_with_gitcommitid.git
        chdir: bashscripts/
 
    - name: giving ownership to build.sh and giving excecuting permissions to deploy.sh
      ansible.builtin.shell:
        cmd: sudo chown ubuntu deploy.sh && sudo chmod 744 deploy.sh
-       chdir: bashscripts/Day9/Bash
+       chdir: bashscripts/Docker_tagging_with_gitcommitid/Bash
 
    - name: running script to make build
      ansible.builtin.shell: 
        cmd: ./deploy.sh
-       chdir: bashscripts/Day9/Bash
+       chdir: bashscripts/Docker_tagging_with_gitcommitid/Bash
