@@ -13,5 +13,5 @@ aws s3 rm s3://git-commit-tag-bucket/new_value.txt
 sudo touch new_value.txt
 sudo chmod 777 new_value.txt
 sudo echo $git_commit > new_value.txt
-aws s3 cp new_value.txt s3://gitcommittagbucket/
+aws s3 cp new_value.txt s3://git-commit-tag-bucket/
 sudo rm new_value.txt
